@@ -31,7 +31,7 @@ public class EmployeeController {
 					addEmployee();
 					break;
 				case 2:
-					showEmployeeDetails();
+					getEmployee();
 					break;
 				case 3:
 					updateEmployeeDetails();
@@ -72,10 +72,6 @@ public class EmployeeController {
 			}
 		}
 
-	}
-
-	public void setScanner(Scanner scanner) {
-		this.scanner = scanner;
 	}
 
 	public void addEmployee() {
@@ -146,8 +142,8 @@ public class EmployeeController {
 
 	}
 
-	public void showEmployeeDetails() {
-		ListIterator<Employee> employeeList = services.getAllEmployees().listIterator();
+	public void getEmployee() {
+		ListIterator<Employee> employeeList = services.getEmployee().listIterator();
 
 		while (employeeList.hasNext()) {
 			System.out.println(employeeList.next().toString());

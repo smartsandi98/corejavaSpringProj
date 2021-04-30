@@ -2,18 +2,18 @@ package services;
 
 import java.util.List;
 
-import dao.EmployeeDao;
+import dao.DAOImpl;
 import model.Employee;
 
 public interface EmployeeServices {
 
-	public void setDao(EmployeeDao dao);
+	public void setDao(DAOImpl dao);
 
 	long addEmployee(Employee employee);
 
 	Employee searchEmployeeByID(long employeeId);
 
-	List<Employee> getAllEmployees();
+	List<Employee> getEmployee();
 
 	boolean removeEmployeeDetails(long employeeID);
 

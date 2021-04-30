@@ -2,14 +2,14 @@ package services;
 
 import java.util.List;
 
-import dao.EmployeeDao;
+import dao.DAOImpl;
 import model.Employee;
 
 public class EmployeeServicesImpl implements EmployeeServices {
-	private EmployeeDao dao;
+	private DAOImpl dao;
 	private long idGenarator;
 
-	public void setDao(EmployeeDao dao) {
+	public void setDao(DAOImpl dao) {
 		this.dao = dao;
 	}
 
@@ -29,11 +29,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		return foundEmployee;
 	}
 
-	public void showEmployeeDetails() {
-
-	}
-
-	public EmployeeDao getDao() {
+	public DAOImpl getDao() {
 		return dao;
 	}
 
@@ -86,7 +82,7 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		}
 	}
 
-	public List<Employee> getAllEmployees() {
+	public List<Employee> getEmployee() {
 		return dao.getEmployee();
 	}
 

@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import dao.rowmapper.EmployeeRowMapper;
 import model.Employee;
 
-public class EmployeeDao implements DAO {
+public class DAOImpl implements DAO {
 
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	private JdbcTemplate jdbcTemplate;
