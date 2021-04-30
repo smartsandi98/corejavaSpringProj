@@ -10,12 +10,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import dao.rowmapper.EmployeeRowMapper;
 import model.Employee;
 
-public class EmployeeDao {
+public class EmployeeDao implements DAO {
 
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	private JdbcTemplate jdbcTemplate;
-
-	
 
 	public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
 		this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
@@ -136,21 +134,19 @@ public class EmployeeDao {
 		return false;
 	}
 
-	public void getEmployee() {
+	public List<Employee> getEmployee() {
 
-		final String GET_ALL_EMPLOYEE = "select * from EMPLOYEE";
+		final String GET_ALL_EMPLOYEE = "select * from EMPLOYEE ORDER BY EMPLOYEEID ASC";
 		try {
 
 			List<Employee> employeeList = jdbcTemplate.query(GET_ALL_EMPLOYEE, new EmployeeRowMapper());
-			for (int i = 0; i < employeeList.size(); i++) {
-				System.out.println("Employee Id: " + employeeList.get(i).getEmployeeId() + ", Employee Name: "
-						+ employeeList.get(i).getEmployeeName() + ", Employee age: "
-						+ employeeList.get(i).getEmployeeAge() + ", Employee Address: "
-						+ employeeList.get(i).getEmployeeAddress());
-			}
+			return employeeList;
+			
 		} catch (Exception e) {
 			System.out.println("Error In Showing Details");
+			return null;
 		}
+		
 
 	}
 

@@ -1,5 +1,7 @@
 package services;
 
+import java.util.List;
+
 import dao.EmployeeDao;
 import model.Employee;
 
@@ -11,7 +13,7 @@ public interface EmployeeServices {
 
 	Employee searchEmployeeByID(long employeeId);
 
-	void getAllEmployees();
+	List<Employee> getAllEmployees();
 
 	boolean removeEmployeeDetails(long employeeID);
 

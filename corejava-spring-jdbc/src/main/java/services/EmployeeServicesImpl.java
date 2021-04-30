@@ -1,5 +1,7 @@
 package services;
 
+import java.util.List;
+
 import dao.EmployeeDao;
 import model.Employee;
 
@@ -84,8 +86,8 @@ public class EmployeeServicesImpl implements EmployeeServices {
 		}
 	}
 
-	public void getAllEmployees() {
-		dao.getEmployee();
+	public List<Employee> getAllEmployees() {
+		return dao.getEmployee();
 	}
 
 }
