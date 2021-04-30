@@ -141,12 +141,11 @@ public class EmployeeDao implements DAO {
 
 			List<Employee> employeeList = jdbcTemplate.query(GET_ALL_EMPLOYEE, new EmployeeRowMapper());
 			return employeeList;
-			
+
 		} catch (Exception e) {
 			System.out.println("Error In Showing Details");
 			return null;
 		}
-		
 
 	}
 

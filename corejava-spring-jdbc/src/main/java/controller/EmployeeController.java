@@ -1,6 +1,6 @@
 package controller;
 
-import java.util.List;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 import model.Employee;
@@ -147,16 +147,10 @@ public class EmployeeController {
 	}
 
 	public void showEmployeeDetails() {
-		List<Employee> employeeList = services.getAllEmployees();
-		if (employeeList != null) {
-			for (int i = 0; i < employeeList.size(); i++) {
-				System.out.println("Employee Id: " + employeeList.get(i).getEmployeeId() + ", Employee Name: "
-						+ employeeList.get(i).getEmployeeName() + ", Employee age: "
-						+ employeeList.get(i).getEmployeeAge() + ", Employee Address: "
-						+ employeeList.get(i).getEmployeeAddress());
-			}
-		} else {
-			System.out.println("No Value");
+		ListIterator<Employee> employeeList = services.getAllEmployees().listIterator();
+
+		while (employeeList.hasNext()) {
+			System.out.println(employeeList.next().toString());
 		}
 
 	}

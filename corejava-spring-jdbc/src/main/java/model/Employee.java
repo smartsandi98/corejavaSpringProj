@@ -39,6 +39,15 @@ public class Employee {
 	public String getEmployeeAddress() {
 		return employeeAddress;
 	}
+
+	@Override
+	public String toString() {
+		return ("Employee Id: " + employeeId 
+				+ ", Employee Name: " + employeeName
+				+ ", Employee age: " + employeeAge
+				+ ", Employee Address: " + employeeAddress);
+
+	}
 	
 	
 
